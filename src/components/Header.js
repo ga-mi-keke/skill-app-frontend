@@ -1,9 +1,11 @@
 // src/components/Header.js
+//Home画面の構成要素のひとつ
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header() {
   return (
+    //レイアウト
     <header style={{
       display: 'flex',
       justifyContent: 'space-between',
@@ -12,7 +14,8 @@ function Header() {
       borderBottom: '1px solid #ccc'
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-        {/* ロゴ：画像とテキスト */}
+        {/*各ページへのリンクをヘッダーにおいてる*/}
+        {/*ロゴ画像は適当に今はreactのデフォを挿入（なんかいいのあったら差し替えといて）→public/logo.png */}
         <Link to="/home" style={{ textDecoration: 'none', color: 'black', display: 'flex', alignItems: 'center' }}>
           <img src="/logo.png" alt="SKILL APP" style={{ width: '40px', marginRight: '5px' }} />
           <span style={{ fontWeight: 'bold', fontSize: '18px' }}>SKILL APP</span>
