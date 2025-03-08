@@ -1,7 +1,7 @@
 // src/pages/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-//ホームの構成要素であるheaderをインポート
+//headerをインポート
 import Header from '../components/Header';
 
 function Home() {
