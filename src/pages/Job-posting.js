@@ -62,7 +62,9 @@ function JobPosting() {
     <div>
     {/*headerコンポーネントを挿入→components/Header.jsへ*/}
       <Header />
-      <h1 style={{ fontSize: '32px', marginBottom: '20px' }}>企業様へ、バイトのお問合せ</h1>
+      <div style={{ textAlign: 'center', backgroundColor: '#9acd32', color: 'white', padding: '20px 0' }}>
+          <h1 style={{ margin: 0, fontSize: '36px' }}>企業様へ、バイトのお問合せ</h1>
+        </div>
       {/*登録フォームのレイアウト onSubmit(フォームの送信を検知してhandleSubmitを実行)で上投稿処理の関数につながる*/}
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
       <input 
