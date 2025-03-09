@@ -8,7 +8,9 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import JobPosting from './pages/Job-posting';
 import Jobs from './pages/Jobs';
+import Apply from './pages/Apply';
 import About from './pages/About';
+
 //ページ遷移の処理を書いてる関数
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/job-posting" element={<JobPosting />} />
         <Route path="/jobs" element={<Jobs />} />
+        <Route path="/apply" element={<Apply />} />
         <Route path="/about" element={<About />} />
         {/*まだ遷移先が作られてないから適当に中身を作ってる*/}
         <Route path="/profile" element={<div style={{ padding: '20px' }}>マイページ (Profile Page)</div>} />
