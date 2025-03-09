@@ -10,7 +10,7 @@ import JobPosting from './pages/Job-posting';
 import Jobs from './pages/Jobs';
 import Apply from './pages/Apply';
 import About from './pages/About';
-
+import MyPage from './pages/MyPage';
 //ページ遷移の処理を書いてる関数
 function App() {
   return (
@@ -24,11 +24,10 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<MyPage />} />
         {/*まだ遷移先が作られてないから適当に中身を作ってる*/}
-        <Route path="/profile" element={<div style={{ padding: '20px' }}>マイページ (Profile Page)</div>} />
         <Route path="/learning" element={<div style={{ padding: '20px' }}>プログラミング学習 (Learning Page)</div>} />
         <Route path="/community" element={<div style={{ padding: '20px' }}>コミュニティ (Community Page)</div>} />
-        {/*<Route path="/about" element={<div style={{ padding: '20px' }}>このサイトについて (About Page)</div>} />*/}
       </Routes>
     </Router>
   );
