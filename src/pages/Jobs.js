@@ -66,7 +66,7 @@ function Jobs() {
 
   // 応募ボタン押下時
   const handleApply = (jobId) => {
-    navigate(`/apply/${jobId}`);
+    navigate('/apply');
   };
 
   return (
