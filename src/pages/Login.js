@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-function Login() {
   //ログイン成功したときにhomeに遷移するためのやつ
-  const navigate = useNavigate();
+
+  const BackgroundText = () => {
+    const navigate = useNavigate();
   //3つの状態変数を定義してる[変数,set関数]
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -35,41 +36,76 @@ function Login() {
       setError('ログイン中にエラーが発生しました');
     }
   };
+
+    // 背景文字「SKILL APP」のスタイル
+    const backgroundTextStyle = {
+      position: 'absolute',
+      top: '-5%',
+      left: '-1%',
+      fontSize: '20rem', // 背景文字サイズ
+      fontWeight: 'bold',
+      color: ' #f0f0f0',
+      textAlign: 'center',
+      lineHeight: '1', // 行間
+      zIndex: -1, // 背景文字を背面に配置
+    };
+  
+    return (
+      <div>
+        {/* 背景文字「SKILL APP」をdivで分けて表示 */}
+        <div style={backgroundTextStyle}>
+          <div>SKILL</div>
+          <div>APP</div>
+        </div>
+  
+        {/* ログインフォームのレイアウト */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            position: 'relative', // フォームを正常に動作させるために必要
+            zIndex: 1, // フォームを前面に表示
+          }}
+        >
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
+            <h2><strong>SKILL APP</strong> Login</h2>
+            {/* 入力欄 */}
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              style={{ margin: '10px 0', padding: '8px' }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              style={{ margin: '10px 0', padding: '8px' }}
+            />
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <button type="submit" style={{ padding: '10px', marginTop: '10px' }}>Login</button>
+            <div style = {{lineHeight: '1', textAlign: 'center'}}>
+            <p style={{ marginTop: '10px' }}>
+              アカウントをお持ちでない方は 
+            </p>
+            <p><Link to="/register">こちらから登録</Link></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  };
+  
+  function Login() {
   //画面の部分
   return (
-    //画面のレイアウト
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      {/*ログインフォームのレイアウト onSubmit(フォームの送信を検知してhandleLoginを実行)で上のログイン処理の関数につながる*/}
-      <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
-        <h2>Login</h2>
-        {/*入力欄*/}
-        {/*入力イベントeを検知するとsetUsernameが実行され最初に定義した状態変数に都度格納*/}
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          required
-          style={{ margin: '10px 0', padding: '8px' }}
-        />
-        {/*上とほぼおなじ*/}
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          required
-          style={{ margin: '10px 0', padding: '8px' }}
-        />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {/*formの送信ボタン*/}
-        <button type="submit" style={{ padding: '10px', marginTop: '10px' }}>Login</button>
-        {/*ユーザー登録画面への遷移のリンク →Register.js*/}
-        <p style={{ marginTop: '10px' }}>
-        アカウントをお持ちでない方は <Link to="/register">こちらから登録</Link>
-        </p>
-      </form>
-    </div>
+    <BackgroundText />
   );
 }
 

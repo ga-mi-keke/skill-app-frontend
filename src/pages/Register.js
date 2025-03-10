@@ -50,7 +50,7 @@ function Register() {
   //画面の部分
   return (
     //レイアウト
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' , background: ' #f0f0f0'}}>
       {/*登録フォームのレイアウト onSubmit(フォームの送信を検知してhandleRegisterを実行)で上の登録処理の関数につながる*/}
       <form onSubmit={handleRegister} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
         <h2>ユーザー登録</h2>
