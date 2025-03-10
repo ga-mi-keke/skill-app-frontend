@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 function SkillPRTab() {
+//状態管理変数の配列
   const [skills, setSkills] = useState({
     programmingLanguages: '',
     frameworks: '',
@@ -9,11 +10,13 @@ function SkillPRTab() {
     cloudPlatforms: '',
     devTools: ''
   });
+  //こっちは変数
   const [message, setMessage] = useState('');
-
+//開かれたときにサーバーからスキル情報を取得してる
   useEffect(() => {
     fetch('http://localhost:3000/skills', {
       method: 'GET',
+      //なんかユーザー認証にいるらしい
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + localStorage.getItem('token')
@@ -35,14 +38,15 @@ function SkillPRTab() {
       })
       .catch(err => console.error(err));
   }, []);
-
+//入力欄に打ち込む処理
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSkills(prev => ({ ...prev, [name]: value }));
   };
-
+//保存が推されたらサーバーに情報が保存される
   const handleSave = (e) => {
     e.preventDefault();
+    //aAからa_aに変換してる
     const payload = {
       programming_languages: skills.programmingLanguages,
       frameworks: skills.frameworks,
