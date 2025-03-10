@@ -12,6 +12,7 @@ import Apply from './pages/Apply';
 import About from './pages/About';
 import MyPage from './pages/MyPage';
 import Learning from './pages/Learning';
+import Community from './pages/Community';
 //ページ遷移の処理を書いてる関数
 function App() {
   return (
@@ -27,8 +28,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<MyPage />} />
         <Route path="/learning" element={<Learning />} />
-        {/*まだ遷移先が作られてないから適当に中身を作ってる*/}
-        <Route path="/community" element={<div style={{ padding: '20px' }}>コミュニティ (Community Page)</div>} />
+        <Route path="/community" element={<Community />} />
       </Routes>
     </Router>
   );
