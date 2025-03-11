@@ -13,6 +13,7 @@ import About from './pages/About';
 import MyPage from './pages/MyPage';
 import Learning from './pages/Learning';
 import Community from './pages/Community';
+
 //ページ遷移の処理を書いてる関数
 function App() {
   return (
