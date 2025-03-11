@@ -6,19 +6,14 @@ function Learning() {
   return (
     <div>
         <Header />
-    <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-      {/* 見出し */}
-      <h2
-        style={{
-          fontSize: '32px',
-          borderBottom: '2px solid blue',
-          display: 'inline-block',
-          paddingBottom: '10px',
-          marginBottom: '40px'
-        }}
-      >
-        プログラミング学習
-      </h2>
+        <div style={{ textAlign: 'center', backgroundColor: ' #6696cc', color: 'white', padding: '20px 0' }}>
+          <h1 style={{ margin: 0, fontSize: '36px' }}>プログラミング学習</h1>
+        </div>
+      {/* 背景画像 */}
+      <div style={{ textAlign: 'center' }}>
+        <img src="/Learning.jpg" alt="Jobs Background" style={{ width: '100%', maxHeight: '300px', objectFit: 'cover' }} />
+      </div>
+      <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
 
       {/* カード（ボタン）を配置するコンテナ */}
       <div
