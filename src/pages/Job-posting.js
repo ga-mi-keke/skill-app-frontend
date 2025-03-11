@@ -103,7 +103,7 @@ function JobPosting() {
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
           <label style={{ width: '120px', marginTop: '10px' }}>詳細説明:</label>
           <textarea
-            placeholder="例: ここに詳細な説明を入力してください。"
+            placeholder="例: ここに詳細な説明を入力してください。(勤務地, 業務内容, 雇用期間など)"
             value={companyDescription}
             onChange={(e) => setCompanyDescription(e.target.value)}
             required
